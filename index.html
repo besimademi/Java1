@@ -39,9 +39,20 @@
     <label>Numri 2 </label>
     <input type="number" id="id222">
     <br>
-    <button type="submit" onclick="sum1()">Kalkulo
+    <button type="submit" onclick="times()">Kalkulo
     </button>
     <p id="result12"></p>
+    
+    <br><br>
+    <label>Numri 1</label>
+    <input type="number" id="nr1111">
+    <br>
+    <label>Numri 2 </label>
+    <input type="number" id="id2222">
+    <br>
+    <button type="submit" onclick="devide()">Kalkulo
+    </button>
+    <p id="result123"></p>
     <script>
       function sum(){
         var a=Number(document.getElementById('nr1').value);
@@ -63,6 +74,14 @@
         var b=Number(document.getElementById('id222').value);
         var c=a*b;
         document.getElementById('result12').innerHTML=c;
+      }
+      function devide()
+      {
+        
+        var a=Number(document.getElementById('nr1111').value);
+        var b=Number(document.getElementById('id2222').value);
+        var c=a/b;
+        document.getElementById('result123').innerHTML=c;
       }
     </script>
   </body>
