@@ -1,104 +1,122 @@
-<html>
+<!DOCTYPE html>
+<html lang="sq">
 <head>
   <meta charset="UTF-8">
   <title>Java 1</title>
 </head>
-  <body>
-    <h1>
-      MIre se vini
-    </h1>
-    <p>Kjo eshte faqja ime e pare ne Github Pages</p>
+<body>
 
-<h1> Det 1</h1>
-    <br><br>
-    <label>Numri 1</label>
-    <input type="number" id="nr1">
-    <br>
-    <label>Numri 2 </label>
-    <input type="number" id="id2">
-    <br>
-    <button type="submit" onclick="sum()">Kalkulo
-    </button>
-    <p id="result"> </p>
-    <br><br>
+  <h1>Mirë se vini</h1>
+  <p>Kjo është faqja ime e parë në GitHub Pages</p>
 
-    
-    <label>Numri 1</label>
-    <input type="number" id="nr11">
-    <br>
-    <label>Numri 2 </label>
-    <input type="number" id="id22">
-    <br>
-    <button type="submit" onclick="sum1()">Kalkulo
-    </button>
-    <p id="result1"></p>
-    <br><br>
-    <label>Numri 1</label>
-    <input type="number" id="nr111">
-    <br>
-    <label>Numri 2 </label>
-    <input type="number" id="id222">
-    <br>
-    <button type="submit" onclick="times()">Kalkulo
-    </button>
-    <p id="result12"></p>
-    
-    <br><br>
-    <label>Numri 1</label>
-    <input type="number" id="nr1111">
-    <br>
-    <label>Numri 2 </label>
-    <input type="number" id="id2222">
-    <br>
-    <button type="submit" onclick="devide()">Kalkulo
-    </button>
-    <p id="result123"></p>
-    <br><br><br><br>
-    <h1>Rritje/zbritje te nimrit</h1>
-    <button type="submit" onclick="rritje()">Rritje +</button>
-    <button type="submit" onclick="zbritje()">Zbrite -</button>
-    <p type="number" id="increase">0</p>
-    <script>
-}
- var n=0;
-function rritje(){
-  n=n+1;
-  document.getElementById('increase').innerHTML=n;
-}
-      function sum(){
-        var a=Number(document.getElementById('nr1').value);
-        var b=Number(document.getElementById('id2').value);
-        
-        var c=a+b;
-        document.getElementById('result').innerHTML=c;
-      }
-      
-      function sum1(){
-        var a=Number(document.getElementById('nr11').value);
-        var b=Number(document.getElementById('id22').value);
-        var c=a-b;
-        document.getElementById('result1').innerHTML=c;
-      }
-      function times()
-      {
-        
-        var a=Number(document.getElementById('nr111').value);
-        var b=Number(document.getElementById('id222').value);
-        var c=a*b;
-        document.getElementById('result12').innerHTML=c;
-      }
-      
-function devide() {
-    var a = Number(document.getElementById('nr1111').value);
-    var b = Number(document.getElementById('id2222').value);
+  <!-- ===== MBLEDHJA ===== -->
+  <h2>Mbledhja (+)</h2>
+  <label>Numri 1</label>
+  <input type="number" id="mbledhja1">
+  <br>
+  <label>Numri 2</label>
+  <input type="number" id="mbledhja2">
+  <br>
+  <button type="button" onclick="mbledhja()">Kalkulo</button>
+  <p id="rezultatiMbledhja"></p>
+  <hr>
 
-    if (b == 0) {
-        var text = "Nuk mund te pjestoni me 0";
-        document.getElementById('result123').innerHTML = text;
-    } else {
-        var c = a / b;
-        document.getElementById('result123').innerHTML = c;
+  <!-- ===== ZBRITJA ===== -->
+  <h2>Zbritja (-)</h2>
+  <label>Numri 1</label>
+  <input type="number" id="zbritja1">
+  <br>
+  <label>Numri 2</label>
+  <input type="number" id="zbritja2">
+  <br>
+  <button type="button" onclick="zbritjaNumrave()">Kalkulo</button>
+  <p id="rezultatiZbritja"></p>
+  <hr>
+
+  <!-- ===== SHUMËZIMI ===== -->
+  <h2>Shumëzimi (×)</h2>
+  <label>Numri 1</label>
+  <input type="number" id="shumezimi1">
+  <br>
+  <label>Numri 2</label>
+  <input type="number" id="shumezimi2">
+  <br>
+  <button type="button" onclick="shumezimi()">Kalkulo</button>
+  <p id="rezultatiShumezimi"></p>
+  <hr>
+
+  <!-- ===== PJESËTIMI ===== -->
+  <h2>Pjesëtimi (÷)</h2>
+  <label>Numri 1</label>
+  <input type="number" id="pjesetimi1">
+  <br>
+  <label>Numri 2</label>
+  <input type="number" id="pjesetimi2">
+  <br>
+  <button type="button" onclick="pjesetimi()">Kalkulo</button>
+  <p id="rezultatiPjesetimi"></p>
+  <hr>
+
+  <!-- ===== RRITJE / ZBRITJE ===== -->
+  <h2>Rritje / Zbritje e numrit</h2>
+  <button type="button" onclick="rritje()">Rritje +</button>
+  <button type="button" onclick="zbritje()">Zbritje -</button>
+  <p id="numeruesi">0</p>
+
+  <script>
+    // Merr vlerën e një input-i si numër
+    function merrNumrin(id) {
+      return Number(document.getElementById(id).value);
     }
-    </script>
-  </body>
+
+    // Shfaq rezultatin në një element
+    function shfaq(id, vlera) {
+      document.getElementById(id).innerHTML = vlera;
+    }
+
+    // ===== Kalkulatori =====
+    function mbledhja() {
+      var a = merrNumrin('mbledhja1');
+      var b = merrNumrin('mbledhja2');
+      shfaq('rezultatiMbledhja', 'Rezultati: ' + (a + b));
+    }
+
+    function zbritjaNumrave() {
+      var a = merrNumrin('zbritja1');
+      var b = merrNumrin('zbritja2');
+      shfaq('rezultatiZbritja', 'Rezultati: ' + (a - b));
+    }
+
+    function shumezimi() {
+      var a = merrNumrin('shumezimi1');
+      var b = merrNumrin('shumezimi2');
+      shfaq('rezultatiShumezimi', 'Rezultati: ' + (a * b));
+    }
+
+    function pjesetimi() {
+      var a = merrNumrin('pjesetimi1');
+      var b = merrNumrin('pjesetimi2');
+
+      if (b === 0) {
+        shfaq('rezultatiPjesetimi', 'Nuk mund të pjesëtoni me 0');
+      } else {
+        shfaq('rezultatiPjesetimi', 'Rezultati: ' + (a / b));
+      }
+    }
+
+    // ===== Numëruesi =====
+    var n = 0;
+
+    function rritje() {
+      n = n + 1;
+      shfaq('numeruesi', n);
+    }
+
+    function zbritje() {
+      n = n - 1;
+      shfaq('numeruesi', n);
+    }
+  </script>
+
+</body>
 </html>
