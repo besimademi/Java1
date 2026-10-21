@@ -31,6 +31,7 @@
     <br>
     <button type="submit" onclick="sum1()">Kalkulo
     </button>
+    <p id="result1"></p>
     <script>
       function sum(){
         var a=Number(document.getElementById('nr1').value);
@@ -39,11 +40,11 @@
         document.getElementById('result').innerHTML=c;
       }
       
-      function sum(){
+      function sum1(){
         var a=Number(document.getElementById('nr11').value);
         var b=Number(document.getElementById('id22').value);
         var c=a-b;
-        document.getElementById('result').innerHTML=c;
+        document.getElementById('result1').innerHTML=c;
       }
     </script>
   </body>
