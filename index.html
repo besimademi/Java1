@@ -32,6 +32,16 @@
     <button type="submit" onclick="sum1()">Kalkulo
     </button>
     <p id="result1"></p>
+    <br><br>
+    <label>Numri 1</label>
+    <input type="number" id="nr111">
+    <br>
+    <label>Numri 2 </label>
+    <input type="number" id="id222">
+    <br>
+    <button type="submit" onclick="sum1()">Kalkulo
+    </button>
+    <p id="result12"></p>
     <script>
       function sum(){
         var a=Number(document.getElementById('nr1').value);
@@ -45,6 +55,14 @@
         var b=Number(document.getElementById('id22').value);
         var c=a-b;
         document.getElementById('result1').innerHTML=c;
+      }
+      function times()
+      {
+        
+        var a=Number(document.getElementById('nr111').value);
+        var b=Number(document.getElementById('id222').value);
+        var c=a*b;
+        document.getElementById('result12').innerHTML=c;
       }
     </script>
   </body>
