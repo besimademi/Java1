@@ -53,7 +53,18 @@
     <button type="submit" onclick="devide()">Kalkulo
     </button>
     <p id="result123"></p>
+    <br><br><br><br>
+    <h1>Rritje/zbritje te nimrit</h1>
+    <button type="submit" onclick="rritje()">Rritje +</button>
+    <button type="submit" onclick="zbritje()">Zbrite -</button>
+    <p type="number" id="increase">0</p>
     <script>
+}
+ var n=0;
+function rritje(){
+  n=n+1;
+  document.getElementById('increase').innerHTML=n;
+}
       function sum(){
         var a=Number(document.getElementById('nr1').value);
         var b=Number(document.getElementById('id2').value);
@@ -88,8 +99,6 @@ function devide() {
         var c = a / b;
         document.getElementById('result123').innerHTML = c;
     }
-}
-
     </script>
   </body>
 </html>
