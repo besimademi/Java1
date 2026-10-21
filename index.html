@@ -76,20 +76,20 @@
         var c=a*b;
         document.getElementById('result12').innerHTML=c;
       }
-      function devide()
-      {
-        var a=Number(document.getElementById('nr1111').value);
-        var b=Number(document.getElementById('id2222').value);
-        if (b==0)
-        {
-          var text="Nuk mund te pjestoni me 0";
-        document.getElementById('result123').innerHTML=text;  
-        }
-        else
-        {
-        var c=a\b;
-        document.getElementById('result123').innerHTML=c;
-      }}
+      
+function devide() {
+    var a = Number(document.getElementById('nr1111').value);
+    var b = Number(document.getElementById('id2222').value);
+
+    if (b == 0) {
+        var text = "Nuk mund te pjestoni me 0";
+        document.getElementById('result123').innerHTML = text;
+    } else {
+        var c = a / b;
+        document.getElementById('result123').innerHTML = c;
+    }
+}
+
     </script>
   </body>
 </html>
