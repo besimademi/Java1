@@ -20,11 +20,29 @@
     <button type="submit" onclick="sum()">Kalkulo
     </button>
     <p id="result"> </p>
+    <br><br>
+
+    
+    <label>Numri 1</label>
+    <input type="number" id="nr11">
+    <br>
+    <label>Numri 2 </label>
+    <input type="number" id="id22">
+    <br>
+    <button type="submit" onclick="sum1()">Kalkulo
+    </button>
     <script>
       function sum(){
         var a=Number(document.getElementById('nr1').value);
-        var b=Number(document.getElementById('nr2').value);
+        var b=Number(document.getElementById('id2').value);
         var c=a+b;
+        document.getElementById('result').innerHTML=c;
+      }
+      
+      function sum(){
+        var a=Number(document.getElementById('nr11').value);
+        var b=Number(document.getElementById('id22').value);
+        var c=a-b;
         document.getElementById('result').innerHTML=c;
       }
     </script>
